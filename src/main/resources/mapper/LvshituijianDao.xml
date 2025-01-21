@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LvshituijianDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LvshituijianEntity" id="lvshituijianMap">
+        <result property="lvshizhanghao" column="lvshizhanghao"/>
+        <result property="lvshixingming" column="lvshixingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="zhaopian" column="zhaopian"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="lvshidengji" column="lvshidengji"/>
+        <result property="gerenjianjie" column="gerenjianjie"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LvshituijianVO" >
+		SELECT * FROM lvshituijian  lvshituijian         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LvshituijianVO" >
+		SELECT  lvshituijian.* FROM lvshituijian  lvshituijian
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LvshituijianView" >
+
+		SELECT  lvshituijian.* FROM lvshituijian  lvshituijian 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LvshituijianView" >
+		SELECT * FROM lvshituijian  lvshituijian <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
